@@ -20,3 +20,13 @@ Route::get('/', function () {
 Route::get('/main', function () {
    return view('main_page', ['title' => 'Main page', 'segment_1' => ['title' => 'Featured books']]);
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
