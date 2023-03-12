@@ -10,3 +10,4 @@
         {{$segment_1['title']}}
     </div>
 </body>
+
