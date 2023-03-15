@@ -21,6 +21,10 @@ Route::get('/main', function () {
    return view('main_page', ['title' => 'Main page', 'segment_1' => ['title' => 'Featured books']]);
 });
 
+Route::get('mybooks', function () {
+    return view('my_books');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
