@@ -16,7 +16,7 @@
     @foreach(Book::all() as $book)
         <img src="{{ URL::to('/') }}/public/book_cover.png" alt="Failed to load book's cover">
         <br>
-        <h3><a href="book/{{$book->id}}">{{$book->name}} </a></h3>
+        <h3><a href="book/{{$book->id}}">{{$book->name}}</a></h3>
         <p>{{$book->description}}</p>
         <br>
     @endforeach

@@ -3,6 +3,7 @@
 use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +20,11 @@ Route::get('/', function () {
     return view('main_page');
 });
 
-/*Route::get('/main', function () {
-   return view('main_page', ['books' => Book::all()]);
-});*/
-
 Route::get('mybooks', function () {
     return view('my_books');
 });
 
-Route::get('book/{id}', function () {
-    return view('book_page');
-});
+Route::get('/book/{id}', 'App\Http\Controllers\BooksController@show');
 
 Route::middleware([
     'auth:sanctum',
