@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,15 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main_page');
 });
 
-Route::get('/main', function () {
-   return view('main_page', ['title' => 'Main page', 'segment_1' => ['title' => 'Featured books']]);
-});
+/*Route::get('/main', function () {
+   return view('main_page', ['books' => Book::all()]);
+});*/
 
 Route::get('mybooks', function () {
     return view('my_books');
+});
+
+Route::get('book/{id}', function () {
+    return view('book_page');
 });
 
 Route::middleware([

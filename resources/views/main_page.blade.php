@@ -1,25 +1,26 @@
-<!DOCTYPE html>
+@php use App\Models\Book; @endphp
+
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>{{$title}}</title>
+    <title>Main page</title>
 </head>
 
 <body>
-    <div id="segment_1">
-        {{$segment_1['title']}}
-    </div>
+<div id="segment_1">
+    <h1>Popular books</h1>
+</div>
+
+<div id="segment_books">
+    @foreach(Book::all() as $book)
+        <img src="{{ URL::to('/') }}/public/book_cover.png" alt="Failed to load book's cover">
+        <br>
+        <h3><a href="book/{{$book->id}}">{{$book->name}} </a></h3>
+        <p>{{$book->description}}</p>
+        <br>
+    @endforeach
+</div>
 </body>
 
 </html>
-
-{{--
-@php
-\Illuminate\Support\Facades\DB::table('users') -> insert([
-    'login' => 'new_user',
-    'name' => 'username',
-    'email' => 'email@example.com',
-    'password' => '123456'
-]);
-@endphp
---}}
