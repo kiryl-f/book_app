@@ -26,6 +26,7 @@ Route::get('mybooks', function () {
 
 Route::get('/book/{id}', 'App\Http\Controllers\BooksController@show');
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
