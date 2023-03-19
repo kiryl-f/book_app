@@ -15,7 +15,7 @@
     @if (Route::has('login'))
         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
             @auth
-                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                <a href="{{ url('/profile') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">My profile</a>
             @else
                 <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -25,14 +25,14 @@
             @endauth
         </div>
     @endif
-
+</div>
 <div id="segment_1">
     <h1>Popular books</h1>
 </div>
 
 <div id="segment_books">
     @foreach(Book::all() as $book)
-        <img src="{{ URL::to('/') }}/public/book_cover.png" alt="Failed to load book's cover">
+        <img src="../../public/book_cover.png" alt="Failed to load book's cover">
         <br>
         <h3><a href="book/{{$book->id}}">{{$book->name}}</a></h3>
         <p>{{$book->description}}</p>
