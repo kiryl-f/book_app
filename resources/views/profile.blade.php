@@ -2,8 +2,12 @@
 <html lang="en">
 
 <?php
-$id = \Illuminate\Support\Facades\Auth::id();
-$name = \App\Models\User::find($id)->name;
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
+$id = Auth::id();
+$name = User::find($id)->name;
 ?>
 
 <head>
@@ -11,10 +15,17 @@ $name = \App\Models\User::find($id)->name;
 </head>
 
 <body>
-    <h1>My profile</h1><br>
-    <div id="greeting">
-        {{"Hello $name"}}
-    </div>
+<div class="navbar">
+    <nav class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About</a></li>
+    </nav>
+    <div/>
+</div>
+<h1>My profile</h1><br>
+<div id="greeting">
+    {{"Hello $name"}}
+</div>
 </body>
 
 </html>
