@@ -12,15 +12,15 @@ $name = User::find($id)->name;
 
 <head>
     <title>My profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/nav_bar_style.css') }}" />
 </head>
 
 <body>
 <div class="navbar">
     <nav class="navbar">
         <li><a href="/">Home</a></li>
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
     </nav>
-    <div/>
 </div>
 <h1>My profile</h1><br>
 <div id="greeting">

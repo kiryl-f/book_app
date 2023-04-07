@@ -29,6 +29,10 @@ Route::get('/book/{id}', 'App\Http\Controllers\BooksController@show');
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/about', function () {
+    return view('about_page');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
