@@ -33,6 +33,10 @@ Route::get('/profile', function () {
 Route::get('/about', function () {
     return view('about_page');
 });
+
+Route::get('/add_book', function () {
+    return view('add_book');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

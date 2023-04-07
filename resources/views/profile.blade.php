@@ -21,6 +21,7 @@ $name = User::find($id)->name;
     <nav class="navbar">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/">Add new book</a></li>
     </nav>
 </div>
 <h1>My profile</h1><br>
