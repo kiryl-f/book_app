@@ -37,6 +37,7 @@ Route::get('/about', function () {
 Route::get('/add_book', function () {
     return view('add_book');
 });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
