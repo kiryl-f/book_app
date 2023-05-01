@@ -30,7 +30,10 @@
 </div>
 <div id="segment_1">
     <h1>Popular books</h1>
+    <script src="../js/app.js"></script>
 </div>
+
+<div id="example"></div>
 
 <div id="segment_books">
     @foreach(Book::all() as $book)

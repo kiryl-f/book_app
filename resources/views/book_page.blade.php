@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 <h1 id="book_title">{{Book::find($id)->name}}</h1>
 <br>
 <p>{{Book::find($id)->description}}</p>
